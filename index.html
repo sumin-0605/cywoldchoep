@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수야 싸이홈</title>
+
+    <link rel="stylesheet" href="./css/index.css">
+    <style>
+        @import url('https://fastly.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+    </style>
+
+</head>
+
+<body>
+    <div class="profile-banner">
+        <span>여호사밧의 미니홈피</span>
+    </div>
+
+    <div class="side-menu">
+        <a href="#home">홈</a>
+        <a href="#miniroom">미니룸</a>
+        <a href="#bible">말씀</a>
+        <a href="bangmyeongrok.html">방명록</a>
+    </div>
+    <div class="container-outer">
+        <div class="container-middle">
+            <div class="container-inner">
+                <div class="container" id="home">
+                    <ul class="bangmoon">
+                        <li>👣 today</li>
+                        <li class="redtext">59</li>
+                        <li class="divider">|</li>
+                        <li>total</li>
+                        <li>587</li>
+                    </ul>
+
+
+
+                    <div class="section" id="miniroom">
+                        <h2>🛏️ Mini Room</h2>
+                        <div class="miniroom-image">
+                            <img src="./img/day1profile.png" alt="월요일 미니룸 이미지">
+                        </div>
+                    </div>
+                    <div class="section" id="profile">
+                        🗯 “나는 두려워도 하나님께 물을 줄 아는 사람…”<br>
+                    </div>
+                    <a href="https://www.bskorea.or.kr/bible/korbibReadpage.php?version=GAE&book=2ch&chap=18&sec=1&cVersion=&fontSize=15px&fontWeight=normal">
+                        <div class="section" id="bible">
+                            <div class="verse">📖 오늘의 말씀 <br />역대하 18 - 20</div>
+                        </div>
+                    </a>
+
+                    <div class="section" id="guestbook">
+                        <a href="bangmyeongrok.html" class="button">방명록 남기기</a>
+                    </div>
+
+                    <div class="section">
+  <div>🎵 싸이홈 BGM</div>
+  <iframe width="100%" height="200" 
+    src="https://www.youtube.com/embed/9n5luv7LV28" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
+</div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const menuLinks = document.querySelectorAll('.side-menu a');
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // 모든 메뉴에서 active 제거
+                menuLinks.forEach(l => l.classList.remove('active'));
+
+                // 클릭한 메뉴에만 active 추가
+                link.classList.add('active');
+            });
+        });
+    </script>
+    <script>
+        document.querySelector('a[href="#home"]').addEventListener('click', (e) => {
+            e.preventDefault(); // 기본 앵커 동작 막기
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth", // 부드럽게 올라가게
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

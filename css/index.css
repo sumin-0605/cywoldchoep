@@ -1,0 +1,224 @@
+@font-face {
+  font-family: 'NeoDunggeunmoPro';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/NeoDunggeunmoPro.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'Galmuri11', sans-serif;
+}
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+  -webkit-appearance: none;
+}
+
+body {
+  margin: 0;
+  font-family: 'DungGeunMo', sans-serif !important;
+  background-color: #868686;
+  background-image: linear-gradient(
+      0deg,
+      transparent 24%,
+      rgba(255, 255, 255, 0.1) 25%,
+      rgba(255, 255, 255, 0.1) 26%,
+      transparent 27%,
+      transparent 74%,
+      rgba(255, 255, 255, 0.1) 75%,
+      rgba(255, 255, 255, 0.1) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      rgba(255, 255, 255, 0.1) 25%,
+      rgba(255, 255, 255, 0.1) 26%,
+      transparent 27%,
+      transparent 74%,
+      rgba(255, 255, 255, 0.1) 75%,
+      rgba(255, 255, 255, 0.1) 76%,
+      transparent 77%,
+      transparent
+    );
+  background-size: 50px 50px;
+}
+
+.container-outer {
+  border: 1px solid rgb(0, 0, 0);
+  padding: 0.5rem;
+  margin: 1.5rem;
+  border-radius: 16px;
+  background: #00aaff; /* 💙 파란 배경으로 만들기 */
+}
+
+.container-middle {
+  border: 2px solid white ; /* 점선 대신 얇은 흰 선 */
+  border-radius: 12px;
+  padding: 0;
+  background-color: rgba(255, 255, 255,);
+  box-sizing: border-box;
+  margin: -2px; /* 바깥과 정확히 겹치게 */
+  
+}
+
+
+.container-inner {
+  background: white;
+  border-radius: 12px;
+  padding: 0rem 1.5rem;
+  margin: 0.5rem;
+  border: 1px solid black;
+}
+.container {
+  background: transparent; /* 이 안쪽 박스는 흰 배경 없애도 돼 */
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+h1 {
+  font-size: 1.2rem;
+  color: #d14f94;
+  text-align: center;
+}
+
+.section {
+  margin-bottom: 2rem;
+  
+}
+
+.miniroom {
+  height: 150px;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/1086/1086933.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 1rem;
+}
+
+.verse {
+  background: #e4f4fc;
+  padding: 1rem;
+  border-left: 5px solid  #0088cc;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.button {
+  display: inline-block;
+  background: #00aaff;
+  color: white;
+  padding: 0.5rem 0rem;
+  text-align: center;
+  width: 100%;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+iframe {
+  width: 100%;
+  height: 150px;
+  border: none;
+  margin-top: 1rem;
+  border-radius: 10px;
+}
+
+.side-menu {
+  position: fixed;
+  top: 10rem;
+  right: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 999;
+}
+
+.side-menu a {
+  background: #00aaff; /* 💙 파란색으로 변경! */
+  color: white;
+  padding: 0.5rem 0.4rem;
+  border-radius:  0rem 0.5rem 0.5rem 0rem ;
+  font-size: 0.8rem;
+  text-decoration: none;
+  box-shadow: 0 2px 0px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+  text-align: center;
+}
+
+.side-menu a:hover {
+  background: #0088cc; /* 시원한 파랑 느낌 */
+  transform: scale(1.05);
+  transition: 0.2s;
+}
+
+.side-menu a.active {
+  background: #fff;
+  color: #00aaff;
+  font-weight: bold;
+}
+
+.bangmoon {
+  display: flex;              /* 💡 가로로 나열하기 */
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;                /* 요소 사이 간격 */
+  list-style: none;          /* ● 점 없애기 */
+  padding: 0.7rem 1.2rem;
+  margin: 2rem auto;
+  width: fit-content;
+  background-color: white;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.redtext {
+    color: orange;
+}
+
+.miniroom-image {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.miniroom-image img {
+  width: 100%;
+  display: block;
+}
+
+/* 맨 위에 ooo의 미니홈피 */
+.profile-banner {
+  background-color: white;
+  color: #333;
+  padding: 0.7rem 1.5rem;
+  margin: 1rem auto 0.5rem auto;
+  width: fit-content;
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+}

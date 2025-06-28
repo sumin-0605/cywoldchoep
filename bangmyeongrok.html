@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>수야 싸이홈 방명록</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css">
+
+  <style>
+    @font-face {
+      font-family: 'NeoDunggeunmoPro';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/NeoDunggeunmoPro.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    * {
+      font-family: 'Galmuri11', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Galmuri11', sans-serif !important;
+      background-color: #868686;
+      background-image: linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.1) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0.1) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.1) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0.1) 76%, transparent 77%, transparent);
+      background-size: 50px 50px;
+      padding: 2rem;
+      max-width: 600px;
+      margin: auto;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      text-align: center;
+      color: black;
+      background-color: white;
+      border-radius: 1rem;
+      font-size: 1.3rem;
+      line-height: 1.6;
+      margin: 0.5rem 0.5rem;
+      padding: 0.5rem 0rem;
+      border: 1px solid black;
+    }
+
+    form {
+      background: white;
+      border: 2px dashed #00aaff;
+      padding: 1.2rem;
+      border-radius: 1rem;
+      margin: 2rem 0;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.7rem;
+      margin: 0.5rem 0 1rem 0;
+      border-radius: 0.5rem;
+      border: 1px solid #ccc;
+      font-family: 'Galmuri11', sans-serif;
+      font-size: 0.9rem;
+      background-color: #f9f9f9;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #ffffff;
+      color: #00aaff;
+      border: 2px solid #00aaff;
+      padding: 0.6rem 1.2rem;
+      font-weight: bold;
+      border-radius: 0.7rem;
+      cursor: pointer;
+      font-family: 'Galmuri11', sans-serif;
+    }
+
+    button:hover {
+      background-color: #00aaff;
+      color: white;
+    }
+
+    .entry {
+      padding: 1rem;
+    }
+
+    .entry .name {
+      font-weight: bold;
+      color: #00aaff;
+      margin-bottom: 0.3rem;
+    }
+
+    .entry .message {
+      color: #333;
+      white-space: pre-line;
+    }
+
+    /* 배경파란색테두리 */
+    .container-outer {
+      border: 1px solid rgb(0, 0, 0);
+      padding: 0.5rem;
+      margin: 1.5rem 0;
+      border-radius: 16px;
+      background: #00aaff;
+    }
+
+    .container-middle {
+      border: 2px solid white;
+      border-radius: 12px;
+      margin: -2px;
+      background-color: transparent;
+    }
+
+    .container-inner {
+      background: white;
+      border-radius: 12px;
+      padding: 1rem;
+      margin: 0.5rem;
+      border: 1px solid black;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-weight: bold;
+    }
+
+    #submit-message {
+      animation: fadeinout 3s ease-in-out;
+    }
+
+    .home-button {
+      margin: 1rem auto;
+      padding: 0.6rem 1.2rem;
+      font-family: 'Galmuri11', sans-serif;
+      font-size: 0.9rem;
+      background-color: white;
+      color: black;
+      border: 2px solid #00aaff;
+      border-radius: 12px;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s ease-in-out;
+      display: inline-block;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .button-wrapper {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .home-button:hover {
+      background-color: #00aaff;
+      color: white;
+    }
+
+
+    @keyframes fadeinout {
+      0% {
+        opacity: 0;
+        transform: translateY(-5px);
+      }
+
+      10% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      90% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateY(-5px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container-outer">
+    <div class="container-middle">
+      <h1>초읍청년회 <br />성경읽기 챌린지<br />💌방명록💌</h1>
+    </div>
+  </div>
+  <div class="container-outer">
+    <div class="container-middle">
+      <form id="guestbook-form" class="container-inner">
+        <label>이름</label>
+        <input type="text" id="name" required />
+
+        <label>일촌평</label>
+        <textarea id="message" rows="4" required></textarea>
+
+        <button type="submit">💬 남기기</button>
+      </form>
+
+
+
+      <!-- 댓글 완료 메시지 -->
+      <div id="submit-message"
+        style="display: none; text-align: center; color:white; font-weight: bold; margin-top: 1rem;">
+        💌 댓글 입력이 완료되었습니다!
+      </div>
+
+    </div>
+  </div>
+  <div class="button-wrapper">
+    <a href="index.html" class="home-button">🏠 홈으로 돌아가기</a>
+  </div>
+  <div id="guestbook-entries"></div>
+
+  <!-- 🔥 CDN 방식 Firebase SDK (v9 "compat" 버전) -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+
+  <script>
+    // ✅ Firebase 설정
+    const firebaseConfig = {
+      apiKey: "AIzaSyDpm1MsPsvZcnwVof33TJdb21zf9DhtQNo",
+      authDomain: "suya-miniroom.firebaseapp.com",
+      projectId: "suya-miniroom",
+      storageBucket: "suya-miniroom.firebasestorage.app",
+      messagingSenderId: "950295284850",
+      appId: "1:950295284850:web:888fb60dd4d74fb8d2c6eb"
+    };
+
+    // ✅ Firebase 초기화
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    const form = document.getElementById("guestbook-form");
+    const entries = document.getElementById("guestbook-entries");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const message = document.getElementById("message").value;
+
+      await db.collection("guestbook").add({
+        name,
+        message,
+        created: new Date()
+      });
+
+      form.reset();
+      loadEntries(); // 새로고침 없이 목록 갱신
+
+      // 💌 메시지 띄우기
+      const submitMsg = document.getElementById("submit-message");
+      submitMsg.style.display = "block";
+
+      // 3초 후 사라지게 하기
+      setTimeout(() => {
+        submitMsg.style.display = "none";
+      }, 3000);
+    });
+
+    async function loadEntries() {
+      entries.innerHTML = "";
+      const snapshot = await db.collection("guestbook").orderBy("created", "desc").get();
+      snapshot.forEach(doc => {
+        const data = doc.data();
+        const div = document.createElement("div");
+        div.className = "entry";
+        div.innerHTML = `
+  <div class="container-outer">
+    <div class="container-middle">
+      <div class="entry container-inner">
+        <div class="name">👤 ${data.name}</div>
+        <div class="message">💬 ${data.message}</div>
+      </div>
+    </div>
+  </div>
+        `;
+        entries.appendChild(div);
+      });
+    }
+
+    // ✅ 페이지 로딩 시 방명록 불러오기
+    loadEntries();
+  </script>
+</body>
+
+</html>
