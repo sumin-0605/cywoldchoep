@@ -95,10 +95,25 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  font-size: 1rem;
+}
+
 .section {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   
 }
+#profile {
+  font-size: 0.65rem;
+}
+
+#profile.section {
+  margin-bottom: 5rem;
+  border: 1px solid black;
+  border-radius: 0.3rem;
+  padding: 0.2rem;
+}
+
 
 .miniroom {
   height: 150px;
@@ -112,9 +127,26 @@ h1 {
 .verse {
   background: #e4f4fc;
   padding: 1rem;
-  border-left: 5px solid  #0088cc;
+  border: 1px solid #0088cc ;
   margin-bottom: 1rem;
   font-size: 0.9rem;
+  border-radius: 0.3rem;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+
+.versebutton {
+  display: inline-block;
+  background: #00aaff;
+  color: white;
+  padding: 0.5rem 0rem;
+  text-align: center;
+  width: 100%;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
 }
 
 .button {
@@ -129,6 +161,21 @@ h1 {
   font-size: 0.9rem;
   margin-top: 0.5rem;
 }
+
+
+.buttontext {
+  display: inline-block;
+  background: #ffffff;
+  color: #00aaff;
+  border: 1px solid #00aaff;;
+  padding: 0.5rem 0rem;
+  text-align: center;
+  width: 100%;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
 
 iframe {
   width: 100%;
@@ -187,6 +234,7 @@ iframe {
   font-weight: bold;
   color: #333;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid black;
 }
 
 
@@ -202,6 +250,8 @@ iframe {
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0.3rem;
+  border: 2px solid black;
 }
 
 .miniroom-image img {
@@ -216,9 +266,18 @@ iframe {
   padding: 0.7rem 1.5rem;
   margin: 1rem auto 0.5rem auto;
   width: fit-content;
-  border-radius: 1rem;
+  border-radius: 0.3rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   font-weight: bold;
   font-size: 1rem;
   text-align: center;
+  border: 1px solid black;
+}
+
+#bible.section {
+  margin-bottom: 5rem;
+}
+
+#guestbook.section {
+  margin-bottom: 5rem;
 }
