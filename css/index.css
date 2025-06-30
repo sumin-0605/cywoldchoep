@@ -288,7 +288,6 @@ iframe {
   position: fixed;
   width: 15px;
   height: 15px;
-  background-color: pink;
   color: pink;
   font-size: 14px;
   pointer-events: none;
@@ -311,7 +310,6 @@ iframe {
     transform: translate(-50%, -100px) scale(1.5);
   }
 }
-
 
 @media (min-width: 768px) {
 .container-outer {
