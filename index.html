@@ -109,9 +109,14 @@
         });
     </script>
 
-<script>
+ <script>
   document.addEventListener("DOMContentLoaded", function () {
+    let lastTime = 0; // 마지막 생성 시간 저장용
     document.body.addEventListener("mousemove", function (e) {
+      const now = Date.now();
+      if (now - lastTime < 200) return; // 100ms 안에는 무시
+      lastTime = now;
+
       const heart = document.createElement("div");
       heart.className = "floating-heart";
       heart.style.left = e.clientX + "px";
@@ -124,6 +129,7 @@
     });
   });
 </script>
+
 
 </body>
 
