@@ -284,6 +284,33 @@ iframe {
   margin-bottom: 5rem;
 }
 
+.floating-heart {
+  position: fixed;
+  width: 15px;
+  height: 15px;
+  background-color: pink;
+  color: pink;
+  font-size: 14px;
+  pointer-events: none;
+  animation: floatUp 1s ease-out forwards;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+.floating-heart::before {
+  content: "💗";
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -100px) scale(1.5);
+  }
+}
 
 
 @media (min-width: 768px) {
