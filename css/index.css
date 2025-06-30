@@ -24,7 +24,8 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 100%;
   font-family: 'DungGeunMo', sans-serif !important;
   background-color: #868686;
   background-image: linear-gradient(
@@ -281,4 +282,57 @@ iframe {
 
 #guestbook.section {
   margin-bottom: 5rem;
+}
+
+
+
+@media (min-width: 768px) {
+.container-outer {
+  max-width: 600px;
+  width: 100%;
+  margin: 2rem auto;
+  position: relative;
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+.side-menu {
+  position: absolute;
+  top: 5rem;
+  left: 100%; /* 👉 컨테이너 바깥 오른쪽에 딱 붙음 */
+  margin-left: -1.5rem; /* 👉 컨테이너와 약간의 간격 */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 4rem;
+}
+.profile-banner {
+ width: 40%;
+ max-width: 312px;
+  margin-top: 5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'Galmuri11', sans-serif;
+  background-color: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  top: 0;
+  z-index: 999;
+}
+.main-wrapper {
+  position: relative;
+  width: fit-content; /* 👈 컨테이너 너비에 맞게 */
+  margin: 2rem auto;
+  display: flex;
+}
+
+
+
 }
