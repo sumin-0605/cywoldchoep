@@ -267,7 +267,7 @@
 
 
   <script>
-    // ✅ Firebase 설정
+    // Firebase
     const firebaseConfig = {
       apiKey: "AIzaSyAoTViF_nilwdaW2s_Q4ouVs7qytJrSBxU",
       authDomain: "suya-miniroom.firebaseapp.com",
@@ -277,7 +277,7 @@
       appId: "1:950295284850:web:888fb60dd4d74fb8d2c6eb"
     };
 
-    // ✅ Firebase 초기화
+    //Firebase 초기화
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
 
@@ -298,11 +298,11 @@
       form.reset();
       loadEntries(); // 새로고침 없이 목록 갱신
 
-      // 💌 메시지 띄우기
+      // 메시지
       const submitMsg = document.getElementById("submit-message");
       submitMsg.style.display = "block";
 
-      // 3초 후 사라지게 하기
+      
       setTimeout(() => {
         submitMsg.style.display = "none";
       }, 3000);
@@ -329,7 +329,7 @@
       });
     }
 
-    // ✅ 페이지 로딩 시 방명록 불러오기
+    // 페이지 로딩 시 방명록 불러오기
     loadEntries();
   </script>
 
@@ -358,3 +358,4 @@
 </body>
 
 </html>
+
